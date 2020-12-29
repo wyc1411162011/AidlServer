@@ -37,11 +37,8 @@ public class AidlService extends Service {
     public IBinder onBind(Intent intent) {
         return stub;
     }
+    //通过操作类aidl文件生成内部类生成IBinder返回给客户端
     private  final BookController.Stub stub = new BookController.Stub() {
-        @Override
-        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-
-        }
 
         @Override
         public List<Book> getBookList() throws RemoteException {
